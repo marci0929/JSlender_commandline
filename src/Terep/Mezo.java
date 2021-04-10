@@ -4,6 +4,8 @@ import Jatekosok.Jatekos;
 
 public class Mezo {
     boolean lehetPapir;
+    int papirID;
+    boolean vanPapir;
     boolean jarhato;
     Jatekos kiAllRajta;
     String neve;
@@ -15,6 +17,24 @@ public class Mezo {
         this.kiAllRajta = null;
         this.neve = neve;
         this.jele = jele;
+        this.vanPapir=false;
+        this.papirID=-1;
+    }
+
+    public int getPapirID() {
+        return papirID;
+    }
+
+    public void setPapirID(int papirID) {
+        this.papirID = papirID;
+    }
+
+    public boolean isVanPapir() {
+        return vanPapir;
+    }
+
+    public void setVanPapir(boolean vanPapir) {
+        this.vanPapir = vanPapir;
     }
 
     public String getJele() {

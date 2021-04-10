@@ -9,7 +9,7 @@ public class Ember extends Jatekos {
 
     int papirokSzama=0;
     public Ember(){
-        jele="&";
+        jele="@";
         embertLetesz();
         setMinall(GameMaster.palya[getPoz_y()][getPoz_x()]);
         GameMaster.palya[getPoz_y()][getPoz_x()].setKiAllRajta(this);
@@ -46,6 +46,29 @@ public class Ember extends Jatekos {
         if(GameMaster.palya[14][14].isJarhato()) {
             setPoz_x(14);
             setPoz_y(14);
+        }
+    }
+
+    public void papirBegyujt(){
+        int gyujtottpapirID=-1;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(getPoz_x()-1+i>=0 && getPoz_x()-1+i<15 && getPoz_y()-1+j>=0 && getPoz_y()-1+j<15){
+                    if(GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].isVanPapir()){
+                        gyujtottpapirID=GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getPapirID();
+                        for (int k = 0; k < 14; k++) {
+                            for (int l = 0; l < 14; l++) {
+                                if(GameMaster.palya[k][l].getPapirID()==gyujtottpapirID){
+                                    GameMaster.palya[k][l].setPapirID(-1);
+                                    GameMaster.palya[k][l].setVanPapir(false);
+                                }
+                            }
+                        }
+                        System.out.println("Találtál egy papírt a(z) "+GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getNeve()+" objektumon!");
+                        papirokSzama++;
+                    }
+                }
+            }
         }
     }
 
