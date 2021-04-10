@@ -56,15 +56,15 @@ public class Ember extends Jatekos {
                 if(getPoz_x()-1+i>=0 && getPoz_x()-1+i<15 && getPoz_y()-1+j>=0 && getPoz_y()-1+j<15){
                     if(GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].isVanPapir()){
                         gyujtottpapirID=GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getPapirID();
-                        for (int k = 0; k < 14; k++) {
-                            for (int l = 0; l < 14; l++) {
+                        for (int k = 0; k < 15; k++) {
+                            for (int l = 0; l < 15; l++) {
                                 if(GameMaster.palya[k][l].getPapirID()==gyujtottpapirID){
                                     GameMaster.palya[k][l].setPapirID(-1);
                                     GameMaster.palya[k][l].setVanPapir(false);
                                 }
                             }
                         }
-                        System.out.println("Találtál egy papírt a(z) "+GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getNeve()+" objektumon!");
+                        System.out.println("\n\nTaláltál egy papírt a(z) "+GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getNeve()+" objektumon!\n");
                         papirokSzama++;
                     }
                 }
