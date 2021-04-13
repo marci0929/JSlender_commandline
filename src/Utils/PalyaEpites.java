@@ -20,10 +20,7 @@ public class PalyaEpites {
 
     public boolean vanSajatFajl() {
         bemenet.useDelimiter(",");
-        if (bemenet.next().equals("0")) {
-            return false;
-        }
-        return true;
+        return !bemenet.next().equals("0");
     }
 
     public void palyatEpit() throws IOException {
@@ -137,11 +134,11 @@ public class PalyaEpites {
                 }
             }
             if(GameMaster.palya[kezdoY][kezdoX].getClass()==Haz.class){
+                GameMaster.palya[y][x].setPapirID(letettPapirok);
                 boolean horizontalis=getForgatas(7,6);
                 for (int i = 0; i < (horizontalis?7:6); i++) {
                     for (int j = 0; j < (horizontalis?6:7); j++) {
                         GameMaster.palya[kezdoY+j][kezdoX+i].setVanPapir(true);
-                        GameMaster.palya[kezdoY+j][kezdoX+i].setPapirID(letettPapirok);
                     }
                 }
             }
@@ -167,28 +164,32 @@ public class PalyaEpites {
     public void balFelsoSarkotKeres(int x, int y) {
         kezdoX = x;
         kezdoY = y;
-        while (true) {
-            if (kezdoX - 1 >= 0) {
-                if (GameMaster.palya[kezdoY][kezdoX - 1].getClass() == GameMaster.palya[kezdoY][kezdoX].getClass() && !GameMaster.palya[kezdoY][kezdoX - 1].isVanPapir()) {
-                    kezdoX--;
-                }else{
+        boolean voltLeptetes=true;
+        while(voltLeptetes) {
+            voltLeptetes=false;
+            while (true) {
+                if (kezdoX - 1 >= 0) {
+                    if (GameMaster.palya[kezdoY][kezdoX - 1].getClass() == GameMaster.palya[kezdoY][kezdoX].getClass() && !GameMaster.palya[kezdoY][kezdoX - 1].isVanPapir()) {
+                        kezdoX--;
+                        voltLeptetes=true;
+                    } else {
+                        break;
+                    }
+                } else {
                     break;
                 }
             }
-            else{
-                break;
-            }
-        }
-        while (true) {
-            if (kezdoY - 1 >= 0) {
-                if (GameMaster.palya[kezdoY-1][kezdoX].getClass() == GameMaster.palya[kezdoY][kezdoX].getClass() && !GameMaster.palya[kezdoY-1][kezdoX].isVanPapir()) {
-                    kezdoY--;
-                }else{
+            while (true) {
+                if (kezdoY - 1 >= 0) {
+                    if (GameMaster.palya[kezdoY - 1][kezdoX].getClass() == GameMaster.palya[kezdoY][kezdoX].getClass() && !GameMaster.palya[kezdoY - 1][kezdoX].isVanPapir()) {
+                        kezdoY--;
+                        voltLeptetes=true;
+                    } else {
+                        break;
+                    }
+                } else {
                     break;
                 }
-            }
-            else{
-                break;
             }
         }
 

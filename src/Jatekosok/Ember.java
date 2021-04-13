@@ -8,6 +8,7 @@ import Terep.Mezo;
 public class Ember extends Jatekos {
 
     int papirokSzama=0;
+    int lepesekElsoPapirUtan=0;
     public Ember(){
         jele="@";
         embertLetesz();
@@ -54,7 +55,7 @@ public class Ember extends Jatekos {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if(getPoz_x()-1+i>=0 && getPoz_x()-1+i<15 && getPoz_y()-1+j>=0 && getPoz_y()-1+j<15){
-                    if(GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].isVanPapir()){
+                    if(GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getPapirID()!=-1){
                         gyujtottpapirID=GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getPapirID();
                         for (int k = 0; k < 15; k++) {
                             for (int l = 0; l < 15; l++) {
@@ -64,12 +65,30 @@ public class Ember extends Jatekos {
                                 }
                             }
                         }
-                        System.out.println("\n\nTaláltál egy papírt a(z) "+GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getNeve()+" objektumon!\n");
+                        System.out.println("\n\nTalaltal egy papirt a(z) "+GameMaster.palya[getPoz_y()-1+j][getPoz_x()-1+i].getNeve()+" objektumon!\n");
                         papirokSzama++;
                     }
                 }
             }
         }
+    }
+
+    public void lepesHozzaad(){
+        if(papirokSzama>0){
+            lepesekElsoPapirUtan++;
+        }
+    }
+
+    public void setPapirokSzama(int papirokSzama) {
+        this.papirokSzama = papirokSzama;
+    }
+
+    public int getLepesekElsoPapirUtan() {
+        return lepesekElsoPapirUtan;
+    }
+
+    public void setLepesekElsoPapirUtan(int lepesekElsoPapirUtan) {
+        this.lepesekElsoPapirUtan = lepesekElsoPapirUtan;
     }
 
     @Override
