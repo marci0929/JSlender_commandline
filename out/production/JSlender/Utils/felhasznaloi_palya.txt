@@ -1,0 +1,49 @@
+,,
+6,6,6,1,1,1,4,4,4,1,1,2,1,1,1,
+6,6,6,2,1,1,4,4,4,1,1,1,1,2,1,
+6,6,6,1,1,1,1,1,8,8,8,8,8,8,1,
+1,1,1,7,7,7,7,1,9,9,8,9,9,8,1,
+2,1,1,7,7,7,7,1,8,9,8,9,9,8,1,
+1,1,1,1,1,1,1,2,8,9,8,9,9,8,2,
+1,1,1,1,1,1,1,1,8,9,9,9,9,8,1,
+6,6,6,1,1,1,4,4,8,8,8,8,9,8,1,
+6,6,6,1,1,1,4,4,8,8,8,8,9,8,1,
+6,6,6,1,1,1,4,4,1,1,1,1,1,3,3,
+1,3,3,1,1,3,3,1,1,5,5,5,1,3,3,
+1,3,3,1,1,3,3,1,1,5,5,5,1,1,1,
+1,1,1,1,2,1,1,1,1,5,5,5,2,1,1,
+3,3,1,1,3,3,1,1,1,5,5,5,2,1,1,
+3,3,1,1,3,3,1,1,1,5,5,5,2,1,1,
+
+
+-----------------------------
+
+OLVASD EL!!!!
+
+- A fájl felépítésén ne változtass! (az elején lévő ,,-t se töröld ki)
+- A pálya méretét ne írd át!
+- Csak a lentebb megadott számjegyeket használhatod a pálya készítésekor! (amennyiben nem ez történik, a program hibaüzenettel leáll)
+- A pálya készítésekor a felhasználónak kell figyelnie az alábbiakra:
+    - Mivel számok csak a tereptárgyak helyét jelzik (forgatásukat nem),
+        ezért nem lehet letenni 2 azonos típusú tereptárgyat úgy, hogy bármelyik élük összeérjen.
+        Ezzel egyértelműen megadva, hogy melyik szám milyen objektumot, milyen forgatásban jelent.
+        (Amennyiben ilyen történne, az a programban NEM VÁRT VISELKEDÉST okozhat.
+    - A háznak legalább 1 bejárata kell, hogy legyen
+    - A ház valamelyik bejárata szabad kell hogy legyen, tehát nem lehet előtte tereptárgy
+    - Minden tereptárgy csak a definiált méretben (lásd jelmagyarázat) helyezhető el a pályán
+        (a tereptárgyak a fenti szabályok betartásával, bármilyen forgatással elhelyezhetők)
+
+
+Jelmagyarázat:
+
+[azonosító] - [név] : [méret]
+
+1 - üres mező
+2 - kis fa         : 1x1
+3 - nagy fa        : 2x2
+4 - autó           : 2x3
+5 - teherautó      : 3x5
+6 - szikla         : 3x3
+7 - hordó          : 2x4
+8 - ház fala       : ház összesen 6x7
+9 - ház járható

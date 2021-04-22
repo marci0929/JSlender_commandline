@@ -21,25 +21,33 @@ public class GameMaster {
         int vege;
         boolean nemLepett;
         Scanner bemenet = new Scanner(System.in);
-        UserInputCheck inputCheck = new UserInputCheck();
-        PalyaEpites palya_epito = new PalyaEpites();
-        palya_epito.palyatEpit();
-        player = new Ember();
-        slender = new Slender();
-        palya_epito.papirLerak();
 
         System.out.println(UserTajekoztatas.welcome);
         System.out.println(UserTajekoztatas.iranyitas);
         System.out.println(UserTajekoztatas.targyKodok + "\n");
 
+        UserInputCheck inputCheck = new UserInputCheck();
+        PalyaEpites palya_epito = new PalyaEpites();
+        System.out.print("Szeretnéd fájlból betölteni az egyedi pályádat? (i=igen, n=nem): ");
+        String sajatPalya=bemenet.next();
+        palya_epito.palyatEpit(sajatPalya.equals("i"));
+        player = new Ember();
+        slender = new Slender();
+        palya_epito.papirLerak();
+
+
+
 
         while (true) {
-            System.out.println("A jelenlegi poziciod: x:" + (player.getPoz_x() + 1) + ", y: " + (player.getPoz_y() + 1));
+
+            // a korábbi lépések, a program helyességének ellenőrzése céljából, nem kerülnek törlésre a konzolablakból
+
+            System.out.println("A jelenlegi pozíciód: x:" + (player.getPoz_x() + 1) + ", y: " + (player.getPoz_y() + 1));
             PalyaRajzol.rajzol();
             nemLepett = true;
             while (nemLepett) {
                 do {
-                    System.out.print("Mi a kovetkezo lepesed?: ");
+                    System.out.print("Mi a következő lépésed?: ");
                     lepes = bemenet.next();
                 }
                 while (!inputCheck.checkValidInput());
@@ -61,7 +69,7 @@ public class GameMaster {
             }
 
             player.papirBegyujt();
-            System.out.println("Jelenleg osszegyujtott papirok: " + player.getPapirokSzama() + " db");
+            System.out.println("Jelenleg összegyűjtött papírok: " + player.getPapirokSzama() + " db");
             if (player.getPapirokSzama() == 8) {
                 vege = 1;
                 break;
@@ -83,6 +91,6 @@ public class GameMaster {
                 System.out.println(UserTajekoztatas.vesztettel);
                 break;
         }
-        System.out.println("\nKoszi, hogy jatszottal a jatekkal!");
+        System.out.println("\nKöszi, hogy játszottál a játékkal!");
     }
 }
