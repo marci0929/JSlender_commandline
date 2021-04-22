@@ -20,9 +20,6 @@ public class Ember extends Jatekos {
         return papirokSzama;
     }
 
-    public void papirHozzaad(int papirokSzama) {
-        this.papirokSzama +=1;
-    }
     public void lep(){
         if(GameMaster.lepes.equals("w")) setPoz_y(getPoz_y()-1);
         if(GameMaster.lepes.equals("s")) setPoz_y(getPoz_y()+1);
@@ -51,7 +48,7 @@ public class Ember extends Jatekos {
     }
 
     public void papirBegyujt(){
-        int gyujtottpapirID=-1;
+        int gyujtottpapirID;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if(getPoz_x()-1+i>=0 && getPoz_x()-1+i<15 && getPoz_y()-1+j>=0 && getPoz_y()-1+j<15){
@@ -79,16 +76,8 @@ public class Ember extends Jatekos {
         }
     }
 
-    public void setPapirokSzama(int papirokSzama) {
-        this.papirokSzama = papirokSzama;
-    }
-
     public int getLepesekElsoPapirUtan() {
         return lepesekElsoPapirUtan;
-    }
-
-    public void setLepesekElsoPapirUtan(int lepesekElsoPapirUtan) {
-        this.lepesekElsoPapirUtan = lepesekElsoPapirUtan;
     }
 
     @Override
@@ -99,18 +88,12 @@ public class Ember extends Jatekos {
         return poz_y;
     }
 
-    @Override
-    public void setPoz_x(int poz_x) {
+    private void setPoz_x(int poz_x) {
         this.poz_x=poz_x;
     }
 
-    @Override
-    public void setPoz_y(int poz_y) {
+    private void setPoz_y(int poz_y) {
         this.poz_y=poz_y;
-    }
-
-    public Mezo getMinall(){
-        return min_all;
     }
 
     public void setMinall(Mezo min){

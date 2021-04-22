@@ -23,7 +23,7 @@ public class UserInputCheck {
        return false;
    }
 
-   public boolean lepesVoltE() throws InterruptedException {
+   public boolean lepesVoltE() {
        if(GameMaster.lepes.matches("^[wasd]$")) return true;
        if(GameMaster.lepes.equals("iranyitas")) System.out.println(UserTajekoztatas.iranyitas);
        if(GameMaster.lepes.equals("targykodok")) System.out.println(UserTajekoztatas.targyKodok);

@@ -1,7 +1,6 @@
 package Utils;
 
 import Jatekmenet.GameMaster;
-import Jatekosok.Ember;
 
 public class PalyaRajzol {
     public static void rajzol(){

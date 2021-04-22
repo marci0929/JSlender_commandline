@@ -49,10 +49,6 @@ public class Mezo {
         return neve;
     }
 
-    public void setNeve(String neve) {
-        this.neve = neve;
-    }
-
     public Jatekos getKiAllRajta() {
         return kiAllRajta;
     }
@@ -65,15 +61,8 @@ public class Mezo {
         return lehetPapir;
     }
 
-    public void setLehetPapir(boolean lehetPapir) {
-        this.lehetPapir = lehetPapir;
-    }
-
     public boolean isJarhato() {
         return jarhato;
     }
 
-    public void setJarhato(boolean jarhato) {
-        this.jarhato = jarhato;
-    }
 }

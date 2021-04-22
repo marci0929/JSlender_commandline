@@ -15,7 +15,7 @@ public class PalyaEpites {
 
     //ez a default pálya, ezen semmiképpen ne változtass!
     //azért került bele magába a kódba, ha esetleg valami letiltaná a program fájlelérését, akkor is használható legyen a játék
-    int[] default_palya =
+    final int[] default_palya =
                         {
                                 6,6,6,1,1,1,4,4,4,1,1,2,1,1,1,
                                 6,6,6,2,1,1,4,4,4,1,1,1,1,2,1,
@@ -54,7 +54,7 @@ public class PalyaEpites {
         } else {
             van_sajat=false;
         }
-        int nextInput=0;
+        int nextInput;
         try {
             for (int i = 0; i < 15; i++) {
                 for (int j = 0; j < 15; j++) {
